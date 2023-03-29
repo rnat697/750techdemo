@@ -22,7 +22,7 @@ class _PokemonInfoWidgetState extends State<PokemonInfoWidget> {
     int index = 0; 
 
 
-    for(String types in widget.pokemon!.types){
+    for(String type in widget.pokemon!.types){
       currentColour = widget.pokemon!.typeColours[index];
       typeContainer =  Container(
         decoration: BoxDecoration(
@@ -31,7 +31,7 @@ class _PokemonInfoWidgetState extends State<PokemonInfoWidget> {
         ),
         margin: const EdgeInsets.all(5),
         padding: const EdgeInsets.all(6),
-        child: Text(types,
+        child: Text("${type[0].toUpperCase()}${type.substring(1)}",
           style: const TextStyle(fontSize: 20,
             color: Colors.white
           ),

@@ -18,7 +18,7 @@ class PokemonInfo{
   });
 
   factory PokemonInfo.fromJson(Map<String,dynamic>json){
-    var sprites = json['sprites']; // to get sprite urls
+    var sprites = json['sprites']['other']['official-artwork']; // to get sprite urls
     var arrayTypes = [''];
 
     // Check if there's only one typing'
