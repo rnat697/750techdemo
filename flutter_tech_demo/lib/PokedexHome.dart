@@ -21,43 +21,29 @@ class PokedexHome extends StatefulWidget {
 }
 
 class _PokedexHomeState extends State<PokedexHome> {
-  //late AsyncSnapshot<List<Pokemon>> pokeList;
   late Future<List<Pokemon>> futurePokeList;
   @override
   void initState() {
     super.initState();
-    // numbers = List.generate(1000, (index) => "Item $index");
     futurePokeList = fetchPokemon();
   }
 
   Future<List<Pokemon>> fetchPokemon() async{
     // Fetching pokemon in blulk has been modifed from:  https://medium.com/@omlondhe/creating-a-flutter-pokedex-23c167cae043
-    //List<Pokemon> listOfPokes = [];
-    //Pokemon poke;
     var poke;
-    ///for(int id = 1; id < 10; id++){
-      final response = await http.get(Uri.parse('https://pokeapi.co/api/v2/pokemon?limit=1000'));
-      print("---------------");
-      if(response.statusCode == 200){
-           List<Map<String, dynamic>> data = List.from(jsonDecode(response.body)['results']);
-
-          //print(response.body);
-          
-          setState(() {
-              poke = data.asMap().entries.map<Pokemon>((element) {
-              element.value['id'] = element.key +1;
-              element.value['img'] = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${element.key + 1}.png";
-              return Pokemon.fromJson(element.value);
-            }).toList();
-          });
-          // poke = Pokemon.fromJson(jsonDecode(response.body));
-          // poke.setTypeColour();
-          // pokeList.add(Pokemon.fromJson(jsonDecode(response.body)));
-       
+    final response = await http.get(Uri.parse('https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0'));
+    if(response.statusCode == 200){
+        List<Map<String, dynamic>> data = List.from(jsonDecode(response.body)['results']);    
+        setState(() {
+            poke = data.asMap().entries.map<Pokemon>((element) {
+            element.value['id'] = element.key +1;
+            element.value['img'] = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${element.key + 1}.png";
+            return Pokemon.fromJson(element.value);
+          }).toList();
+        });    
       }else{
         throw Exception('Failed to load Pokemon');
       }
-   // }
     return poke;
   }
 
@@ -67,18 +53,18 @@ class _PokedexHomeState extends State<PokedexHome> {
    
     return Scaffold(
        appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title), // To access class fields inside of a class state you use widget.
       ),
       body:FutureBuilder<List<Pokemon>>(
         future: futurePokeList,
         builder: (context,snapshot){
           if(snapshot.hasData){
-            //pokeList = snapshot;
             return PokemonGrid(pokemonList: snapshot.data);
           }else if(snapshot.hasError){
             return Text('${snapshot.error}');
+          }else{
+            return  const CircularProgressIndicator();
           }
-          return  const CircularProgressIndicator();
                 
         }
       ),
