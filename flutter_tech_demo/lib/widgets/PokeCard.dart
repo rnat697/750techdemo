@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
+import 'package:flutter_tech_demo/pages/PokemonDetailsPage.dart';
 import '../utils/Styles.dart';
 
 class PokemonCard extends StatelessWidget{
@@ -13,7 +14,12 @@ class PokemonCard extends StatelessWidget{
 
     return GestureDetector(
       onTap: () => {
-        print("ew ${pokeID}")
+        print("ew ${pokeID}"),
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => PokedexDetailsPage(id: pokeID, name: pokeName),
+          ),
+        )
       },
       child: Column(
         children: [

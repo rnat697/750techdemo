@@ -23,4 +23,90 @@ abstract class Styles{
   static const TextStyle cardNamesStyle = TextStyle(color: Colors.white, fontSize: 20);
   static BoxDecoration cardBoxStyle = BoxDecoration(color: Colors.red.shade200, borderRadius: BorderRadius.circular(5.0));
 
+  static  List<Color> setTypeColour(List<String> types){
+    List<Color> typeColours = [Colors.black,Colors.black]; // temporary colours
+    int index = 0;
+
+    for(String type in types){
+      switch (type) {
+      case 'normal':
+        typeColours[index] = Styles.normalType;
+        break;
+
+      case 'fire':
+        typeColours[index] = Styles.fireType;
+        break;
+
+      case 'water':
+        typeColours[index] = Styles.waterType;
+        break;
+
+      case 'electric':
+        typeColours[index] = Styles.electricType;
+        break;
+
+      case 'grass':
+        typeColours[index] = Styles.grassType;
+        break;
+
+      case 'ice':
+        typeColours[index] = Styles.iceType;
+        break;
+
+      case 'fighting':
+        typeColours[index] = Styles.fightingType;
+        break;
+
+      case 'poison':
+        typeColours[index] = Styles.poisonType;
+        break;
+
+      case 'ground':
+        typeColours[index] = Styles.groundType;
+        break;
+
+      case 'flying':
+        typeColours[index] = Styles.flyingType;
+        break;
+
+      case 'psychic':
+        typeColours[index] = Styles.psychicType;
+        break;
+
+      case 'bug':
+        typeColours[index] = Styles.bugType;
+        break;
+
+      case 'rock':
+        typeColours[index] = Styles.rockType;
+        break;
+
+      case 'ghost':
+        typeColours[index] = Styles.ghostType;
+        break;
+
+      case 'dragon':
+        typeColours[index] = Styles.dragonType;
+        break;
+
+      case 'dark':
+        typeColours[index] = Styles.darkType;
+        break;
+
+      case 'steel':
+        typeColours[index] = Styles.steelType;
+        break;
+
+      case 'fairy':
+        typeColours[index] = Styles.fairyType;
+        break;
+
+      default: typeColours[index] = Colors.black;
+      }
+      index++;
+
+    }
+    return typeColours;
+  }
+
 }

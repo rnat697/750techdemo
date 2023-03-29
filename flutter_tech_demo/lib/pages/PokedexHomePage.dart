@@ -25,10 +25,10 @@ class _PokedexHomeState extends State<PokedexHomePage> {
   @override
   void initState() {
     super.initState();
-    futurePokeList = fetchPokemon();
+    futurePokeList = fetchPokemonRepo();
   }
 
-  Future<List<PokemonRepository>> fetchPokemon() async{
+  Future<List<PokemonRepository>> fetchPokemonRepo() async{
     // Fetching pokemon in blulk has been modifed from:  https://medium.com/@omlondhe/creating-a-flutter-pokedex-23c167cae043
     var poke;
     final response = await http.get(Uri.parse('https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0'));
@@ -42,7 +42,7 @@ class _PokedexHomeState extends State<PokedexHomePage> {
           }).toList();
         });    
       }else{
-        throw Exception('Failed to load Pokemon');
+        throw Exception('Failed to load Pokemon repository');
       }
     return poke;
   }
