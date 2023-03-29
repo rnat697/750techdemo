@@ -1,13 +1,13 @@
 
 import 'package:flutter/material.dart';
-import 'Pokemon.dart';
+import '../data/PokemonRepository.dart';
 import 'PokeCard.dart';
-import 'Styles.dart';
+import '../utils/Styles.dart';
 
 class PokemonGrid extends StatefulWidget {
   PokemonGrid({super.key, required this.pokemonList});
 
-  final List<Pokemon>? pokemonList;
+  final List<PokemonRepository>? pokemonList;
 
   @override
   State<PokemonGrid> createState() => _PokemonGridState();
@@ -27,12 +27,13 @@ class _PokemonGridState extends State<PokemonGrid>{
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
       ),
-      children: widget.pokemonList!.map((e)=> Container(
-        decoration: Styles.cardBoxStyle,
-        alignment: Alignment.center,
-        child: PokemonCard(pokeName: e.name, spriteImg: e.spriteImg),
+      children: widget.pokemonList!.map((e)=> 
+       Container(
+          decoration: Styles.cardBoxStyle,
+          alignment: Alignment.center,
+          child: PokemonCard(pokeID:e.id, pokeName: e.name, spriteImg: e.spriteImg),
         
-      )).toList(),
+        )).toList(),
 
     );
   }

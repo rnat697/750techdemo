@@ -1,10 +1,10 @@
 // Fetching pokemon in blulk has been modifed from:  https://medium.com/@omlondhe/creating-a-flutter-pokedex-23c167cae043
 
-class Pokemon {
+class PokemonRepository {
     int id;
     String name;
     String spriteImg;    
-    Pokemon.fromJson(Map<String, dynamic> data)
+    PokemonRepository.fromJson(Map<String, dynamic> data)
         : id = data['id'],
           name = data['name'],
           spriteImg = data['img'];
