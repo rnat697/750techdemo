@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tech_demo/data/PokemonInfo.dart';
+import 'package:flutter_tech_demo/widgets/PokemonInfoWidget.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-class PokedexDetailsPage extends StatefulWidget {
-  PokedexDetailsPage({super.key, required this.id,required this.name});
+class PokemonInfoPage extends StatefulWidget {
+ PokemonInfoPage({super.key, required this.id,required this.name});
   final int id;
   final String name;
  
   @override
-  State<PokedexDetailsPage> createState() => _PokedexDetailsState();
+  State<PokemonInfoPage> createState() => _PokemonInfoState();
 }
 
-class _PokedexDetailsState extends State<PokedexDetailsPage> {
+class _PokemonInfoState extends State<PokemonInfoPage> {
   late Future<PokemonInfo> futurePokeList;
   @override
   void initState() {
@@ -33,13 +34,14 @@ class _PokedexDetailsState extends State<PokedexDetailsPage> {
   Widget build(BuildContext context){
     return Scaffold(
        appBar: AppBar(
-        title: Text(widget.name), // To access class fields inside of a class state you use widget.
+        title: Text("${widget.name[0].toUpperCase()}${widget.name.substring(1)}"),
+        
       ),
       body: FutureBuilder<PokemonInfo>(
         future: futurePokeList,
         builder: (context,snapshot){
           if(snapshot.hasData){
-            return Text(snapshot.data!.types.toString());
+            return PokemonInfoWidget(pokemon: snapshot.data);
           }else if(snapshot.hasError){
             return Text('${snapshot.error}');
           }else{
