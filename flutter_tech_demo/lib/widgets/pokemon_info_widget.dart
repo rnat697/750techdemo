@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../data/PokemonInfo.dart';
+import '../data/pokemon_info.dart';
 
 class PokemonInfoWidget extends StatefulWidget {
  const PokemonInfoWidget({super.key, required this.pokemon});

@@ -1,11 +1,11 @@
 
 import 'package:flutter/material.dart';
-import '../data/PokemonRepository.dart';
-import 'PokeCard.dart';
-import '../utils/Styles.dart';
+import '../data/pokemon_repository.dart';
+import 'poke_card.dart';
+import '../utils/styles.dart';
 
 class PokemonGrid extends StatefulWidget {
-  PokemonGrid({super.key, required this.pokemonList});
+  const PokemonGrid({super.key, required this.pokemonList});
 
   final List<PokemonRepository>? pokemonList;
 

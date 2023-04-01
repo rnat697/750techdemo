@@ -1,10 +1,10 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
-import 'package:flutter_tech_demo/pages/PokemonInfoPage.dart';
+import 'package:flutter_tech_demo/pages/pokemon_info_page.dart';
 import '../utils/Styles.dart';
 
 class PokemonCard extends StatelessWidget{
-  PokemonCard({super.key, required this.pokeID, required this.pokeName, required this.spriteImg});
+  const PokemonCard({super.key, required this.pokeID, required this.pokeName, required this.spriteImg});
   final int pokeID;
   final String pokeName;
   final String spriteImg;

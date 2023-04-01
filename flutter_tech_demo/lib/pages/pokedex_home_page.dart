@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import '../widgets/PokemonGrid.dart';
+import '../widgets/pokemon_grid.dart';
 import 'package:http/http.dart' as http;
-import '../data/PokemonRepository.dart';
+import '../data/pokemon_repository.dart';
 import 'dart:convert';
 class PokedexHomePage extends StatefulWidget {
-  PokedexHomePage({super.key, required this.title});
-  final title;
+  const PokedexHomePage({super.key, required this.title});
+  final String title;
  
   @override
   State<PokedexHomePage> createState() => _PokedexHomeState();

@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import '../utils/Styles.dart';
+import '../utils/styles.dart';
 class PokemonInfo{
   final int id;
   final String name;

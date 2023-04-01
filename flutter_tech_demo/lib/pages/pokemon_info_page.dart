@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tech_demo/data/PokemonInfo.dart';
-import 'package:flutter_tech_demo/widgets/PokemonInfoWidget.dart';
+import 'package:flutter_tech_demo/data/pokemon_info.dart';
+import 'package:flutter_tech_demo/widgets/pokemon_info_widget.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
