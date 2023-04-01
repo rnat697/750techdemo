@@ -13,10 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: _title,
+      home: const PokedexHomePage(title: 'Pokedex'), // sets the default route of the app 
+      // NOTE: that named routes are not recommended for most applications, see https://docs.flutter.dev/development/ui/navigation#limitations
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const PokedexHomePage(title: 'Pokedex'),
     );
   }
 }
