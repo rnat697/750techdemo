@@ -22,7 +22,12 @@ abstract class Styles{
   
   static const TextStyle cardNamesStyle = TextStyle(color: Colors.white, fontSize: 20);
   static BoxDecoration cardBoxStyle = BoxDecoration(color: Colors.red.shade200, borderRadius: BorderRadius.circular(5.0));
+  static const TextStyle descriptionTextStyle = TextStyle(fontSize: 18);
+  static const TextStyle pokeNameInfoText = TextStyle(fontSize: 28);
+  static const TextStyle heightAndWeightText = TextStyle(fontSize: 22);
 
+
+  // Setting type colours based on a pokemon's type
   static  List<Color> setTypeColour(List<String> types){
     List<Color> typeColours = [Colors.black,Colors.black]; // temporary colours
     int index = 0;
