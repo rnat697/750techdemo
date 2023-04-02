@@ -4,17 +4,11 @@ import '../data/pokemon_repository.dart';
 import 'poke_card.dart';
 import '../utils/styles.dart';
 
-class PokemonGrid extends StatefulWidget {
+// This is a custom widget to show each pokemon from the list in a grid layout.
+class PokemonGrid extends StatelessWidget {
   const PokemonGrid({super.key, required this.pokemonList});
 
   final List<PokemonRepository>? pokemonList;
-
-  @override
-  State<PokemonGrid> createState() => _PokemonGridState();
-
-}
-
-class _PokemonGridState extends State<PokemonGrid>{
 
   @override
   Widget build(BuildContext context){
@@ -27,12 +21,11 @@ class _PokemonGridState extends State<PokemonGrid>{
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
       ),
-      children: widget.pokemonList!.map((e)=> 
+      children: pokemonList!.map((e)=>  // Map every pokemon in the list into a Pokemon Card Widget
        Container(
           decoration: Styles.cardBoxStyle,
           alignment: Alignment.center,
           child: PokemonCard(pokeID:e.id, pokeName: e.name, spriteImg: e.spriteImg),
-        
         )).toList(),
 
     );
