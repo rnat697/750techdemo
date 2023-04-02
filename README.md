@@ -33,7 +33,9 @@ Here are some steps to create a new Flutter project on Visual Studio Code:
 5. Enter a project name.
 
 ## Folder Structure
-The main Flutter project files are located in the ```./flutter_tech_demo/``` directory. Inside this directory you will see a lot of folders. The following directories contain files and folders required for running the application on a given OS:
+I have two example projects in this repository, ```/flutter_new_project_example/``` and ```/flutter_tech_demo/```. The project ```/flutter_new_project_example/``` is the project that Flutter auto-generates. This is a very basic application. The project ```/flutter_tech_demo/``` is my implementation of a Pokedex application using Flutter and the PokeAPI.
+
+Both projects will include the following directories and files in their respective main project folder. Inside this directory you will see a lot of folders. The following directories contain files and folders required for running the application on a given OS:
 - ```/android/```
 - ```/ios/```
 - ```/linux/```
@@ -41,9 +43,17 @@ The main Flutter project files are located in the ```./flutter_tech_demo/``` dir
 - ```/web/```
 - ```/windows/```
 
-Typically you wouldn't need to work in those directories. However, sometimes you may need to modify a file to grant permisson for your app to do certain things such as accessing the internet. For example, on Android, in order to access the internet you need to add the permission ```<uses-permission android:name="android.permission.INTERNET" /> ``` in the ```AndroidManifest.xml``` located in ```/android/app/src/main/``` directory.
+Typically you wouldn't need to work in those directories. However, sometimes you may need to modify a file to grant permisson for your app to do certain things such as accessing the internet.
 
-The working directory is under the ```/lib/``` directory. The folder structure in this directory is up to you. Additionally, the file ```pubspec.yaml```  downloads and configures the dependecies or packages that our application would require and ```pubspecam.lock``` contains the version of each depedency/package used in the application. Typically, you would only need to edit the ```pubspec.yaml``` when adding additional dependecies or packages.
+The working directory is under the ```/lib/``` directory. The folder structure in this directory is up to you. Additionally, the file ```pubspec.yaml```  downloads and configures the dependencies or packages that our application would require and ```pubspecam.lock``` contains the version of each dependency/package used in the application. Typically, you would only need to edit the ```pubspec.yaml``` when adding additional dependencies or packages.
+
+### Project 1 Folder: flutter_new_project_example
+The Flutter project files for this are located in the ```/flutter_new_project_example/``` directory.
+Since this is a very basic application, there is only one file in the working directory ```/lib/``` which is ```main.dart```.
+
+### Project 2 Folder: flutter_tech_demo
+The Flutter project files for this are located in the ```./flutter_tech_demo/``` directory. 
+For this project, I need to access the internet to fetch pokemon from the pokeAPI. In order to access the internet you need to add the permission ```<uses-permission android:name="android.permission.INTERNET" /> ``` in the ```AndroidManifest.xml``` located in ```/android/app/src/main/``` directory.
 
 The working directory ```/lib/``` for my Flutter tech demo contains:
 - ```/data/``` folder - contains ```.dart``` files for data models that I fetched from the PokeAPI.
@@ -51,6 +61,7 @@ The working directory ```/lib/``` for my Flutter tech demo contains:
 - ```/utils/``` folder - contains a ```styles.dart``` file to centralise my styling for widgets.
 - ```/widgets/``` folder - contains ```.dart``` files for custom widgets that could be repeatedly used.
 - ```main.dart``` file - this is where the application first gets executed.
+
 
 ## How to use my project
 
