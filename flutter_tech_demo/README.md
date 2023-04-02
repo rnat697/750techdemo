@@ -1,5 +1,5 @@
 # flutter_tech_demo
-
+**This is auto-generated when creating a new Flutter project - see README in main repo folder for my documentation**
 A new Flutter project.
 
 ## Getting Started
