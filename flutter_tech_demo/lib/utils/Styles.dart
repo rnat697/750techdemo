@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 // Pokemon type colours are taken from https://gist.github.com/apaleslimghost/0d25ec801ca4fc43317bcff298af43c3
+// This is just an abstract class I made to centralise the styles.
 abstract class Styles{
   static const Color normalType = Color(0xFFA8A77A);
   static const Color fireType = Color(0xFFEE8130);
@@ -27,7 +28,7 @@ abstract class Styles{
   static const TextStyle heightAndWeightText = TextStyle(fontSize: 22);
 
 
-  // Setting type colours based on a pokemon's type
+  // Setting type colours based on a pokemon's type(s) this will make it easier for me to select the right colours when showing a pokemon's typing.
   static  List<Color> setTypeColour(List<String> types){
     List<Color> typeColours = [Colors.black,Colors.black]; // temporary colours
     int index = 0;
