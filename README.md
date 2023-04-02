@@ -52,8 +52,9 @@ The Flutter project files for this are located in the ```/flutter_new_project_ex
 Since this is a very basic application, there is only one file in the working directory ```/lib/``` which is ```main.dart```.
 
 ### Project 2 Folder: flutter_tech_demo
-The Flutter project files for this are located in the ```./flutter_tech_demo/``` directory. 
-For this project, I need to access the internet to fetch pokemon from the pokeAPI. In order to access the internet you need to add the permission ```<uses-permission android:name="android.permission.INTERNET" /> ``` in the ```AndroidManifest.xml``` located in ```/android/app/src/main/``` directory.
+The Flutter project files for this are located in the ```./flutter_tech_demo/``` directory.
+For this project, I need to access the internet to fetch pokemon from the pokeAPI. To do this I added a [http package](https://pub.dev/packages/http) to make http requests.
+In order to access the internet on Android you need to add the permission ```<uses-permission android:name="android.permission.INTERNET" /> ``` in the ```AndroidManifest.xml``` located in ```/android/app/src/main/``` directory.
 
 The working directory ```/lib/``` for my Flutter tech demo contains:
 - ```/data/``` folder - contains ```.dart``` files for data models that I fetched from the PokeAPI.
@@ -137,5 +138,6 @@ Note: Devtools will not be available on this.
 
 ## References
 - [PokeAPI](https://pokeapi.co/docs/v2#info)
+- [Dart Packages](https://pub.dev/)
 
 
