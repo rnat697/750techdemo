@@ -1,4 +1,8 @@
-// ignore_for_file: file_names
+// This is a data model that holds the a pokemon's more detailed info. Data fetched from PokeAPI are the pokemon's id,
+// pokemon's name, an image of the pokemon, the pokemon's type(s), the pokemon's weight and height.
+// Additional fields such as description is a place holder text since the API doesn't have any information on the pokemon's description.
+// the pokemon's type colour(s) are dependent on the pokemon's type(s). A pokemon will  have a minimum of 1 type and a maximum of 2 types. This type colour
+// will be used on UI specifically the pokemon's type text's background colour.
 
 import 'package:flutter/material.dart';
 import '../utils/styles.dart';
@@ -23,6 +27,7 @@ class PokemonInfo{
     required this.height,
   });
 
+  // Mapping the JSON data to the associated class fields.
   factory PokemonInfo.fromJson(Map<String,dynamic>json){
     var sprites = json['sprites']['other']['official-artwork']; // to get sprite urls
     var arrayTypes = [''];
