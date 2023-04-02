@@ -53,7 +53,7 @@ Since this is a very basic application, there is only one file in the working di
 
 ### Project 2 Folder: flutter_tech_demo
 The Flutter project files for this are located in the ```./flutter_tech_demo/``` directory.
-For this project, I need to access the internet to fetch pokemon from the pokeAPI. To do this I added a [http package](https://pub.dev/packages/http) to make http requests.
+For this project, I need to access the internet to fetch pokemon from the pokeAPI. To do this I added a [http package](https://pub.dev/packages/http) in ```pubspec.yaml``` to make http requests.
 In order to access the internet on Android you need to add the permission ```<uses-permission android:name="android.permission.INTERNET" /> ``` in the ```AndroidManifest.xml``` located in ```/android/app/src/main/``` directory.
 
 The working directory ```/lib/``` for my Flutter tech demo contains:
