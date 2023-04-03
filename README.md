@@ -1,4 +1,5 @@
 # Tech Demo - Flutter
+This is a front-end tech demo for Flutter specifically for viewing/testing your app on Android devices and browsers (desktop and mobile).
 ## Installations
 **Please use Windows on your PC, Visual Studio Code as your IDE and Android emulators/phones if you are cloning this repo.**
 ### Required installations for this repo
